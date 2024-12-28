@@ -1,0 +1,112 @@
+<!-- printers.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printers - Maintenance Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">AL-ASRAA</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="customers.html">Customers</a></li>
+        <li><a href="#" class="active">Printers</a></li>
+        <li><a href="#">Repairs</a></li>
+      </ul>
+    </nav>
+
+    <div class="printer-container">
+      <div class="printer-grid">
+        <!-- Printer Form Section -->
+        <div class="printer-form-section">
+          <h2>Add New Printer</h2>
+          <form id="printerForm" class="printer-form">
+            <div class="form-group">
+              <label for="printerModel">Printer Model*</label>
+              <input type="text" id="printerModel" required />
+            </div>
+
+            <div class="form-group">
+              <label for="serialNumber">Serial Number*</label>
+              <input type="text" id="serialNumber" required />
+            </div>
+
+            <div class="form-group">
+              <label for="brand">Brand*</label>
+              <select id="brand" required>
+                <option value="">Select Brand</option>
+                <option value="HP">HP</option>
+                <option value="Canon">Canon</option>
+                <option value="Epson">Epson</option>
+                <option value="Brother">Brother</option>
+                <option value="Lexmark">Lexmark</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="type">Printer Type</label>
+              <select id="type">
+                <option value="Laser">Laser</option>
+                <option value="Inkjet">Inkjet</option>
+                <option value="Dot Matrix">Dot Matrix</option>
+                <option value="Thermal">Thermal</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="customerName">Customer Name*</label>
+              <input type="text" id="customerName" required />
+            </div>
+
+            <div class="form-group">
+              <label for="purchaseDate">Purchase Date</label>
+              <input type="date" id="purchaseDate" />
+            </div>
+
+            <div class="form-group">
+              <label for="warranty">Warranty Status</label>
+              <select id="warranty">
+                <option value="Under Warranty">Under Warranty</option>
+                <option value="Expired">Expired</option>
+                <option value="No Warranty">No Warranty</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Additional Notes</label>
+              <textarea id="notes" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Add Printer</button>
+          </form>
+        </div>
+
+        <!-- Printer List Section -->
+        <div class="printer-list-section">
+          <div class="printer-list-header">
+            <h2>Printer List</h2>
+            <div class="search-box">
+              <input
+                type="text"
+                id="searchPrinter"
+                placeholder="Search printers..."
+              />
+            </div>
+          </div>
+
+          <div class="printer-list" id="printerList">
+            <!-- Printer entries will be added here dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="printers.js"></script>
+  </body>
+</html>

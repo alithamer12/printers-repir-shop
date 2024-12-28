@@ -1,0 +1,86 @@
+<!-- reports.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports - Maintenance Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">AL-ASRAA</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="#" class="active">Reports</a></li>
+        <li><a href="customers.html">Customers</a></li>
+        <li><a href="printers.html">Printers</a></li>
+        <li><a href="#">Repairs</a></li>
+      </ul>
+    </nav>
+
+    <div class="reports-container">
+      <h1>Reports Dashboard</h1>
+
+      <!-- Report Filters -->
+      <div class="report-filters">
+        <h2>Report Filters</h2>
+        <div class="filter-group">
+          <label for="dateRange">Date Range:</label>
+          <select id="dateRange">
+            <option value="today">Today</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+            <option value="custom">Custom Range</option>
+          </select>
+
+          <div id="customDateRange" style="display: none">
+            <input type="date" id="startDate" />
+            <input type="date" id="endDate" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Report Types -->
+      <div class="report-types">
+        <div class="report-card">
+          <h3>Repair Summary</h3>
+          <p>Overview of all repairs including status and costs</p>
+          <button onclick="generateReport('repair-summary')">
+            Generate Report
+          </button>
+        </div>
+
+        <div class="report-card">
+          <h3>Revenue Report</h3>
+          <p>Financial summary of completed repairs</p>
+          <button onclick="generateReport('revenue')">Generate Report</button>
+        </div>
+
+        <div class="report-card">
+          <h3>Customer History</h3>
+          <p>Detailed history of customer repairs and interactions</p>
+          <button onclick="generateReport('customer-history')">
+            Generate Report
+          </button>
+        </div>
+
+        <div class="report-card">
+          <h3>Technician Performance</h3>
+          <p>Analysis of repair times and completion rates</p>
+          <button onclick="generateReport('technician')">
+            Generate Report
+          </button>
+        </div>
+      </div>
+
+      <!-- Report Preview -->
+      <div class="report-preview">
+        <h2>Report Preview</h2>
+        <div id="reportContent"></div>
+      </div>
+    </div>
+
+    <script src="reports.js"></script>
+  </body>
+</html>
